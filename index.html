@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midas | Gold Standard Digital Experiences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#FFB800',
+                            purple: '#7C3AED',
+                            orange: '#F97316',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            color: transparent;
+        }
+        .text-stroke-hover:hover {
+            -webkit-text-stroke: 0px;
+            color: #FFB800;
+        }
+        
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden selection:bg-brand-gold selection:text-black">
+    
+    <!-- Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 mix-blend-difference px-6 py-6 md:px-12 flex justify-between items-center backdrop-blur-sm bg-black/10">
+        <a href="#" class="font-display font-bold text-3xl tracking-tighter">MIDAS<span class="text-brand-gold">.</span></a>
+        
+        <button class="group flex flex-col gap-1.5 w-8 hover:w-10 transition-all duration-300 cursor-pointer">
+            <span class="w-full h-0.5 bg-white group-hover:bg-brand-gold transition-colors"></span>
+            <span class="w-3/4 h-0.5 bg-white group-hover:w-full group-hover:bg-brand-gold ml-auto transition-all duration-300"></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-purple/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4"></div>
+            <img src="assets/hero-bg.png" alt="Abstract fluid gold and dark purple" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-5xl mx-auto text-center md:text-left">
+                <p class="font-sans text-brand-gold tracking-[0.2em] mb-4 text-sm md:text-base animate-pulse-slow uppercase">Premium Digital Craftsmanship</p>
+                <h1 class="font-display font-extrabold text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
+                    WE BUILD <br>
+                    <span class="bg-gradient-to-r from-brand-gold via-brand-orange to-brand-purple bg-clip-text text-transparent">GOLD STANDARD</span> <br>
+                    APPS
+                </h1>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center mt-12">
+                    <a href="#contact" class="group relative px-8 py-4 bg-white text-black font-display font-bold text-lg overflow-hidden transition-all hover:scale-105">
+                        <span class="relative z-10 group-hover:text-white transition-colors">START PROJECT</span>
+                        <div class="absolute inset-0 bg-black transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
+                    </a>
+                    
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-4">
+                            <div class="w-12 h-12 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden">
+                                <img src="https://ui-avatars.com/api/?name=A&background=random" alt="Client" class="w-full h-full">
+                            </div>
+                            <div class="w-12 h-12 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden">
+                                <img src="https://ui-avatars.com/api/?name=B&background=random" alt="Client" class="w-full h-full">
+                            </div>
+                            <div class="w-12 h-12 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden">
+                                <img src="https://ui-avatars.com/api/?name=C&background=random" alt="Client" class="w-full h-full">
+                            </div>
+                        </div>
+                        <p class="font-sans text-zinc-400 text-sm">Trusted by 50+ bold brands</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-xs tracking-widest text-zinc-500 uppercase">Scroll</span>
+            <div class="w-[1px] h-16 bg-gradient-to-b from-brand-gold to-transparent"></div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-24 md:py-32 bg-zinc-950 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+                <h2 class="font-display font-bold text-5xl md:text-7xl">OUR <br> EXPERTISE</h2>
+                <p class="font-sans text-zinc-400 max-w-md mt-6 md:mt-0 text-lg">We don't just build software. We craft digital assets that appreciate in value.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-8">
+                <!-- Service 01 -->
+                <div class="md:col-span-7 group cursor-pointer">
+                    <div class="relative overflow-hidden border-t border-zinc-800 pt-8 pb-12 transition-all duration-500 hover:bg-zinc-900/50 hover:px-6 -mx-6 px-6">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-display text-4xl md:text-5xl text-stroke group-hover:text-white transition-all duration-300">01</span>
+                            <svg class="w-8 h-8 text-zinc-600 group-hover:text-brand-gold transition-colors transform group-hover:rotate-45 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-3xl md:text-4xl mb-4 text-white">WEB DEVELOPMENT</h3>
+                        <p class="font-sans text-zinc-400 text-lg max-w-md group-hover:text-zinc-200 transition-colors">High-performance React & Next.js applications that dominate search engines and captivate users.</p>
+                        <div class="absolute top-0 right-0 w-64 h-64 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                            <img src="assets/service-web.png" alt="Web Dev" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spacer -->
+                <div class="md:col-span-5 hidden md:block"></div>
+
+                <!-- Service 02 -->
+                <div class="md:col-span-5 hidden md:block"></div>
+                <div class="md:col-span-7 group cursor-pointer">
+                    <div class="relative overflow-hidden border-t border-zinc-800 pt-8 pb-12 transition-all duration-500 hover:bg-zinc-900/50 hover:px-6 -mx-6 px-6">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-display text-4xl md:text-5xl text-stroke group-hover:text-white transition-all duration-300">02</span>
+                            <svg class="w-8 h-8 text-zinc-600 group-hover:text-brand-orange transition-colors transform group-hover:rotate-45 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-3xl md:text-4xl mb-4 text-white">MOBILE ECOSYSTEMS</h3>
+                        <p class="font-sans text-zinc-400 text-lg max-w-md group-hover:text-zinc-200 transition-colors">Native iOS and Android applications built with Flutter and React Native for seamless experiences.</p>
+                         <div class="absolute top-0 right-0 w-64 h-64 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                            <img src="assets/service-app.png" alt="Mobile App" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="md:col-span-7 group cursor-pointer">
+                    <div class="relative overflow-hidden border-t border-zinc-800 pt-8 pb-12 transition-all duration-500 hover:bg-zinc-900/50 hover:px-6 -mx-6 px-6">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-display text-4xl md:text-5xl text-stroke group-hover:text-white transition-all duration-300">03</span>
+                            <svg class="w-8 h-8 text-zinc-600 group-hover:text-brand-purple transition-colors transform group-hover:rotate-45 duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                        <h3 class="font-display font-bold text-3xl md:text-4xl mb-4 text-white">RADICAL UI/UX</h3>
+                        <p class="font-sans text-zinc-400 text-lg max-w-md group-hover:text-zinc-200 transition-colors">Behavior-driven design systems that convert visitors into loyal brand evangelists.</p>
+                         <div class="absolute top-0 right-0 w-64 h-64 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                            <img src="assets/service-ui.png" alt="UI Design" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section class="py-24 bg-zinc-900 clip-diagonal">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display font-bold text-5xl md:text-7xl mb-16 text-right">SELECTED <br> WORKS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <!-- Project 1 -->
+                <div class="group relative md:mt-0">
+                    <div class="aspect-[4/5] overflow-hidden bg-zinc-800 rounded-sm">
+                        <img src="assets/showcase-1.png" alt="Fintech Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                    <div class="mt-6 flex justify-between items-end">
+                        <div>
+                            <p class="text-brand-gold font-mono text-sm mb-1">FINTECH</p>
+                            <h3 class="font-display font-bold text-2xl">NOVA FINANCE</h3>
+                        </div>
+                        <span class="w-10 h-10 border border-zinc-700 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative md:mt-32">
+                    <div class="aspect-[4/5] overflow-hidden bg-zinc-800 rounded-sm">
+                        <img src="assets/showcase-2.png" alt="E-commerce App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                     <div class="mt-6 flex justify-between items-end">
+                        <div>
+                            <p class="text-brand-purple font-mono text-sm mb-1">E-COMMERCE</p>
+                            <h3 class="font-display font-bold text-2xl">KICKS CULTURE</h3>
+                        </div>
+                        <span class="w-10 h-10 border border-zinc-700 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative md:-mt-32">
+                    <div class="aspect-[4/5] overflow-hidden bg-zinc-800 rounded-sm">
+                        <img src="assets/showcase-3.png" alt="Art Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0">
+                    </div>
+                     <div class="mt-6 flex justify-between items-end">
+                        <div>
+                            <p class="text-brand-orange font-mono text-sm mb-1">WEB3 / ART</p>
+                            <h3 class="font-display font-bold text-2xl">CANVAS DAO</h3>
+                        </div>
+                        <span class="w-10 h-10 border border-zinc-700 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="py-12 border-y border-zinc-800 overflow-hidden bg-black">
+        <div class="flex whitespace-nowrap animate-marquee">
+            <span class="text-6xl md:text-8xl font-display font-black text-stroke px-8">LET'S BUILD GOLD</span>
+            <span class="text-6xl md:text-8xl font-display font-black text-white px-8">LET'S BUILD GOLD</span>
+            <span class="text-6xl md:text-8xl font-display font-black text-stroke px-8">LET'S BUILD GOLD</span>
+            <span class="text-6xl md:text-8xl font-display font-black text-white px-8">LET'S BUILD GOLD</span>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <footer id="contact" class="py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="font-display font-bold text-5xl md:text-8xl mb-12">READY TO <br> <span class="text-brand-gold">SCALE UP?</span></h2>
+            
+            <a href="mailto:hello@midas.agency" class="inline-block relative group">
+                <span class="font-sans font-bold text-3xl md:text-5xl lg:text-6xl hover:text-brand-purple transition-colors duration-300">hello@midas.agency</span>
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-brand-purple transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+
+            <div class="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-left font-sans text-sm text-zinc-500">
+                <div>
+                    <h4 class="text-white font-bold mb-4">SAY HELLO</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-gold">Instagram</a></li>
+                        <li><a href="#" class="hover:text-brand-gold">Twitter</a></li>
+                        <li><a href="#" class="hover:text-brand-gold">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">LOCATIONS</h4>
+                    <p>New York</p>
+                    <p>London</p>
+                    <p>Singapore</p>
+                </div>
+                <div class="col-span-2 md:text-right">
+                    <p>&copy; 2024 Midas Agency.</p>
+                    <p>All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Glow -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-gold/5 blur-[100px] rounded-t-full pointer-events-none"></div>
+    </footer>
+
+    <script>
+        // Simple marque animation setup if tailwind config doesn't catch it
+        // Adding custom CSS for marquee since it's cleaner than complex tailwind config for one-off
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+                animation: marquee 20s linear infinite;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
