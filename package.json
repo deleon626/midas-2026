@@ -6,10 +6,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "start": "astro preview --host 0.0.0.0",
+    "start": "serve dist -l 3000",
     "astro": "astro"
   },
   "dependencies": {
+    "serve": "^14.2.4",
     "astro": "^5.16.15",
     "@astrojs/tailwind": "^6.0.0",
     "tailwindcss": "^3.4.0"
