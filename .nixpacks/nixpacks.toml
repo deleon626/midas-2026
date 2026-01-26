@@ -3,5 +3,7 @@ nixPkgs = ["nodejs_20", "npm-9_x"]
 
 [static]
 publish = "/dist"
-# Use nginx to serve static files
-server = "nginx:alpine"
+
+# Use Astro's preview server to serve the static build
+[phases.start]
+cmd = "npm run preview -- --host 0.0.0.0 --port $PORT"
