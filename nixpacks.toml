@@ -1,0 +1,10 @@
+# Nixpacks configuration for Astro static site
+
+[phases.setup]
+nixPkgs = ["nodejs_20", "npm-9_x"]
+
+[phases.build]
+cmds = ["npm install", "npm run build"]
+
+[start]
+cmd = "npm run start -- --port ${PORT:-4321}"
