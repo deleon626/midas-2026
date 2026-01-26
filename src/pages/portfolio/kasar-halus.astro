@@ -1,0 +1,157 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+---
+
+<PortfolioLayout
+  title="Kasar/Halus Collective"
+  description="Blok M Design Syndicate. Jakarta brutalist design collective embracing raw chaos and refined thought."
+  themeClass="bg-white text-black font-mono selection:bg-kasar-pink selection:text-white"
+  fonts={{ sans: 'Courier New', display: 'Impact' }}
+  customStyles={`
+    :root {
+      --kasar-green: #ccff00;
+      --kasar-pink: #ff00ff;
+      --kasar-black: #000000;
+    }
+    .bg-kasar-green { background-color: #ccff00; }
+    .text-kasar-green { color: #ccff00; }
+    .border-kasar-green { border-color: #ccff00; }
+    .bg-kasar-pink { background-color: #ff00ff; }
+    .text-kasar-pink { color: #ff00ff; }
+    .bg-kasar-black { background-color: #000000; }
+    .font-mono { font-family: 'Courier New', 'Courier', 'monospace'; }
+    .font-display { font-family: 'Impact', 'Arial Black', 'sans-serif'; }
+    .shadow-hard { box-shadow: 8px 8px 0px 0px #000000; }
+    .shadow-hard-hover { box-shadow: 4px 4px 0px 0px #000000; }
+    .text-stroke-3 { -webkit-text-stroke: 3px black; }
+    .animate-spin-slow { animation: spinSlow 10s linear infinite; }
+    @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .glitch-bg { background-image: url('/assets/kasar-glitch.png'); background-size: cover; background-position: center; }
+    .halftone-bg { background-image: url('/assets/kasar-texture-1.png'); opacity: 0.1; pointer-events: none; }
+  `}
+>
+  <!-- Global Texture Overlay -->
+  <div class="fixed inset-0 halftone-bg z-50 mix-blend-multiply"></div>
+
+  <!-- Nav -->
+  <nav class="border-b-4 border-black bg-kasar-green p-4 flex justify-between items-center sticky top-0 z-40">
+    <h1 class="text-2xl font-display font-black tracking-tighter uppercase">Kasar/Halus</h1>
+    <ul class="flex gap-6 font-bold text-sm md:text-base">
+      <li><a href="#manifesto" class="hover:underline decoration-4 decoration-black underline-offset-4">MANIFESTO</a></li>
+      <li><a href="#projects" class="hover:underline decoration-4 decoration-black underline-offset-4">CHAOS</a></li>
+      <li><a href="#contact" class="hover:underline decoration-4 decoration-black underline-offset-4">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="relative w-full h-screen min-h-[600px] flex flex-col justify-center items-center border-b-4 border-black overflow-hidden group">
+    <div class="absolute inset-0 z-0">
+       <img src="/assets/kasar-hero.png" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300" alt="Jakarta Brutalism">
+    </div>
+    <div class="absolute inset-0 bg-kasar-green/20 mix-blend-multiply z-10"></div>
+
+    <div class="relative z-20 bg-white border-4 border-black p-8 md:p-12 shadow-hard max-w-4xl text-center transform -rotate-1">
+      <h2 class="text-6xl md:text-8xl font-display font-black leading-none mb-4 tracking-tighter">
+        JAKARTA<br><span class="text-kasar-pink">RAW</span>
+      </h2>
+      <p class="text-xl md:text-2xl font-bold bg-black text-white inline-block px-4 py-2 transform rotate-2">
+        BLOK M DESIGN SYNDICATE
+      </p>
+    </div>
+  </header>
+
+  <!-- Manifesto -->
+  <section id="manifesto" class="border-b-4 border-black bg-black text-white py-20 px-6 md:px-12 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h3 class="text-5xl md:text-7xl font-display uppercase leading-[0.9] text-kasar-green">
+          Ugly is<br>the new<br>beautiful.
+        </h3>
+        <p class="text-lg md:text-xl leading-relaxed border-l-4 border-kasar-pink pl-6">
+          We reject polish. We embrace the noise of Jakarta streets.
+          Kasar/Halus is the intersection of raw material and refined thought.
+          We build digital experiences that punch you in the face.
+        </p>
+      </div>
+      <div class="relative h-96 w-full border-4 border-white" style="box-shadow: 12px 12px 0px 0px #ccff00;">
+        <img src="/assets/kasar-glitch.png" class="w-full h-full object-cover" alt="Glitch Art">
+        <div class="absolute -bottom-6 -right-6 bg-white text-black font-bold px-6 py-2 border-4 border-black">
+          EST. 2024
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Chaos (Projects) -->
+  <section id="projects" class="py-20 px-6 md:px-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between items-end mb-16 border-b-4 border-black pb-4">
+        <h3 class="text-5xl md:text-7xl font-display uppercase text-black">Selected<br>Chaos</h3>
+        <span class="text-xl font-bold bg-kasar-pink text-white px-3 py-1 border-2 border-black mb-2 animate-pulse">
+          v.2.0
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <article class="bg-white border-4 border-black p-4 shadow-hard hover:shadow-hard-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-200 cursor-pointer group">
+          <div class="h-64 border-2 border-black bg-gray-200 mb-4 overflow-hidden relative">
+             <div class="absolute inset-0 bg-[url('/assets/kasar-texture-1.png')] bg-cover opacity-50"></div>
+             <div class="absolute inset-0 flex items-center justify-center text-4xl font-display uppercase group-hover:scale-110 transition-transform">
+               Pasar
+             </div>
+          </div>
+          <h4 class="text-2xl font-bold uppercase mb-2 group-hover:text-kasar-pink group-hover:underline">Pasar Santa Rebrand</h4>
+          <p class="text-sm border-t-2 border-black pt-2">Identity / Wayfinding / Chaos</p>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="bg-white border-4 border-black p-4 shadow-hard hover:shadow-hard-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-200 cursor-pointer group">
+          <div class="h-64 border-2 border-black bg-kasar-green mb-4 overflow-hidden relative">
+            <div class="absolute inset-0 bg-[url('/assets/kasar-glitch.png')] bg-cover mix-blend-screen opacity-70"></div>
+            <div class="absolute inset-0 flex items-center justify-center text-4xl font-display uppercase group-hover:scale-110 transition-transform text-center">
+              MRT<br>Underground
+            </div>
+          </div>
+          <h4 class="text-2xl font-bold uppercase mb-2 group-hover:text-kasar-pink group-hover:underline">MRT Zine Vol. 1</h4>
+          <p class="text-sm border-t-2 border-black pt-2">Editorial / Photography</p>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="bg-white border-4 border-black p-4 shadow-hard hover:shadow-hard-hover hover:translate-x-1 hover:translate-y-1 transition-all duration-200 cursor-pointer group">
+          <div class="h-64 border-2 border-black bg-kasar-pink mb-4 overflow-hidden relative">
+            <div class="absolute inset-0 flex items-center justify-center text-4xl font-display uppercase group-hover:scale-110 transition-transform text-white">
+              Kopi<br>Tuku
+            </div>
+          </div>
+          <h4 class="text-2xl font-bold uppercase mb-2 group-hover:text-kasar-green group-hover:underline">Kopi Culture UI</h4>
+          <p class="text-sm border-t-2 border-black pt-2">Web Design / Brutalism</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaborate / Footer -->
+  <footer id="contact" class="bg-kasar-green border-t-4 border-black py-20 px-6 relative">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-6xl md:text-9xl font-display font-black uppercase mb-8 leading-none tracking-tighter text-black">
+        Let's<br>Build<br><span class="text-white text-stroke-3">Shit.</span>
+      </h2>
+      <div class="flex flex-col md:flex-row justify-center gap-6 mt-12">
+        <a href="#" class="inline-block bg-black text-white text-2xl font-bold px-8 py-4 border-4 border-transparent hover:bg-white hover:text-black hover:border-black shadow-hard transition-all">
+          studio@kasar-halus.JKT
+        </a>
+        <a href="#" class="inline-block bg-white text-black text-2xl font-bold px-8 py-4 border-4 border-black hover:bg-black hover:text-white shadow-hard transition-all">
+          @kasar.halus
+        </a>
+      </div>
+      <p class="mt-20 font-bold uppercase text-xs md:text-sm">
+        &copy; 2024 Kasar/Halus Collective. Blok M, Jakarta Selatan. No Rights Reserved.
+      </p>
+    </div>
+
+    <!-- Decoration -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-kasar-pink border-4 border-black animate-spin-slow hidden md:block"></div>
+    <div class="absolute bottom-10 right-10 w-32 h-32 bg-white border-4 border-black rounded-full hidden md:block shadow-hard"></div>
+  </footer>
+</PortfolioLayout>

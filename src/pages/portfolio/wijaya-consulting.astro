@@ -1,0 +1,367 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+---
+
+<PortfolioLayout
+  title="Wijaya Strategic Consulting | Top-Tier Corporate Firm SCBD"
+  description="Premier SCBD consulting firm providing corporate strategy, financial advisory, and legal compliance solutions for Jakarta's top enterprises."
+  themeClass="bg-bgLight text-textDark font-body antialiased"
+  fonts={{ sans: 'Source Sans 3', display: 'Lexend' }}
+  customStyles={`
+    :root {
+      --primary: #1E3A8A;
+      --secondary: #1E40AF;
+      --cta: #B45309;
+      --ctaHover: #92400e;
+      --bgLight: #F8FAFC;
+      --textDark: #0F172A;
+      --textMuted: #475569;
+    }
+    .bg-bgLight { background-color: #F8FAFC; }
+    .text-textDark { color: #0F172A; }
+    .text-textMuted { color: #475569; }
+    .text-primary { color: #1E3A8A; }
+    .bg-primary { background-color: #1E3A8A; }
+    .bg-secondary { background-color: #1E40AF; }
+    .text-cta { color: #B45309; }
+    .bg-cta { background-color: #B45309; }
+    .bg-ctaHover { background-color: #92400e; }
+    .hover\\:bg-secondary:hover { background-color: #1E40AF; }
+    .hover\\:bg-ctaHover:hover { background-color: #92400e; }
+    .hover\\:text-primary:hover { color: #1E3A8A; }
+    .font-heading { font-family: 'Lexend', sans-serif; }
+    .font-body { font-family: 'Source Sans 3', sans-serif; }
+    .border-gray-100 { border-color: #f3f4f6; }
+    .border-gray-200 { border-color: #e5e7eb; }
+    .bg-blue-50 { background-color: #eff6ff; }
+    .text-blue-100 { color: #dbeafe; }
+    .bg-white { background-color: white; }
+    .text-white { color: white; }
+    .bg-gray-900 { background-color: #111827; }
+    .text-gray-400 { color: #9ca3af; }
+    .text-gray-500 { color: #6b7280; }
+    .text-gray-100 { color: #f3f4f6; }
+    .border-gray-800 { border-color: #1f2937; }
+    .bg-yellow-400 { color: #facc15; }
+  `}
+>
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+          <div class="w-10 h-10 bg-primary rounded-sm flex items-center justify-center">
+            <span class="text-white font-heading font-bold text-xl">W</span>
+          </div>
+          <div>
+            <h1 class="font-heading font-bold text-xl tracking-tight text-primary">WIJAYA</h1>
+            <p class="text-[10px] uppercase tracking-widest text-textMuted font-medium">Strategic Consulting</p>
+          </div>
+        </div>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#services" class="text-textDark hover:text-primary font-medium transition-colors">Services</a>
+          <a href="#about" class="text-textDark hover:text-primary font-medium transition-colors">About</a>
+          <a href="#team" class="text-textDark hover:text-primary font-medium transition-colors">Leadership</a>
+          <a href="#contact" class="px-6 py-2.5 bg-primary text-white font-heading font-medium rounded hover:bg-secondary transition-colors shadow-sm">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="/assets/wijaya-hero.png" alt="Jakarta SCBD Skyline" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 mix-blend-multiply"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left w-full">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-6 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-cta animate-pulse"></span>
+          <span class="text-white/90 text-sm font-medium tracking-wide">Premier SCBD Consulting Firm</span>
+        </div>
+        <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 drop-shadow-lg">
+          Strategic Excellence for <span class="text-yellow-400">Indonesia's Future</span>
+        </h1>
+        <p class="text-xl text-gray-100 mb-10 leading-relaxed max-w-2xl font-light">
+          We provide authoritative corporate strategy, financial advisory, and legal compliance solutions for Jakarta's top enterprises.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="px-8 py-4 bg-cta hover:bg-ctaHover text-white font-heading font-semibold rounded shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-lg">
+            Partner With Us
+          </a>
+          <a href="#services" class="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-sm text-white font-heading font-semibold rounded transition-all text-lg">
+            Explore Services
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <i data-lucide="chevron-down" class="text-white/70 w-8 h-8"></i>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+  <div class="bg-white border-b border-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="flex items-center justify-center gap-2">
+          <i data-lucide="shield-check" class="w-8 h-8 text-primary"></i>
+          <span class="font-heading font-bold text-xl text-textDark">ISO 9001</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i data-lucide="landmark" class="w-8 h-8 text-primary"></i>
+          <span class="font-heading font-bold text-xl text-textDark">OJK Reg</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i data-lucide="award" class="w-8 h-8 text-primary"></i>
+          <span class="font-heading font-bold text-xl text-textDark">Top Firm '24</span>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+          <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
+          <span class="font-heading font-bold text-xl text-textDark">KADIN Member</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="py-24 bg-bgLight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-cta font-semibold tracking-wide uppercase text-sm mb-3">Our Expertise</h2>
+        <h3 class="font-heading text-4xl font-bold text-textDark mb-6">Comprehensive Corporate Solutions</h3>
+        <p class="text-textMuted text-lg leading-relaxed">
+          Navigating the complexities of the Indonesian market with precision, integrity, and deep local insight.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all group cursor-pointer">
+          <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <i data-lucide="bar-chart-2" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h4 class="font-heading text-xl font-bold text-textDark mb-3">Corporate Strategy</h4>
+          <p class="text-textMuted leading-relaxed mb-6">
+            Data-driven growth roadmaps, market entry strategies, and operational optimization for large-scale enterprises.
+          </p>
+          <span class="text-primary font-medium inline-flex items-center group-hover:underline">Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></span>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all group cursor-pointer">
+          <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <i data-lucide="scale" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h4 class="font-heading text-xl font-bold text-textDark mb-3">Legal & Compliance</h4>
+          <p class="text-textMuted leading-relaxed mb-6">
+            Ensuring full regulatory adherence with OJK, BKPM, and local laws. Risk mitigation and contract advisory.
+          </p>
+          <span class="text-primary font-medium inline-flex items-center group-hover:underline">Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></span>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all group cursor-pointer">
+          <div class="w-14 h-14 bg-blue-50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <i data-lucide="pie-chart" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+          </div>
+          <h4 class="font-heading text-xl font-bold text-textDark mb-3">Financial Advisory</h4>
+          <p class="text-textMuted leading-relaxed mb-6">
+            M&A support, valuation, capital raising, and investment restructuring tailored for the Southeast Asian economy.
+          </p>
+          <span class="text-primary font-medium inline-flex items-center group-hover:underline">Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+        <div>
+          <div class="text-4xl md:text-5xl font-heading font-bold text-yellow-400 mb-2">25+</div>
+          <div class="text-blue-100 font-medium">Years Experience</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-heading font-bold text-yellow-400 mb-2">500+</div>
+          <div class="text-blue-100 font-medium">Corporate Clients</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-heading font-bold text-yellow-400 mb-2">$2B+</div>
+          <div class="text-blue-100 font-medium">Deals Advised</div>
+        </div>
+        <div>
+          <div class="text-4xl md:text-5xl font-heading font-bold text-yellow-400 mb-2">100%</div>
+          <div class="text-blue-100 font-medium">Compliance Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 bg-cta/10 rounded-tl-3xl z-0"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-br-3xl z-0"></div>
+          <img src="/assets/wijaya-profile.png" alt="Budi Wijaya" class="relative z-10 w-full rounded-lg shadow-2xl object-cover h-[500px]">
+          <div class="absolute bottom-8 left-8 z-20 bg-white/95 backdrop-blur-md p-6 rounded shadow-lg max-w-xs border-l-4 border-cta">
+            <h4 class="font-heading text-xl font-bold text-textDark">Budi Wijaya, MBA</h4>
+            <p class="text-primary font-medium mb-2">Managing Partner</p>
+            <p class="text-xs text-textMuted leading-snug">Ex-McKinsey with 20 years of experience transforming Indonesian conglomerates.</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-cta font-semibold tracking-wide uppercase text-sm mb-3">Our Leadership</h2>
+          <h3 class="font-heading text-4xl font-bold text-textDark mb-6">Guided by Industry Veterans</h3>
+          <p class="text-textMuted text-lg leading-relaxed mb-8">
+            At Wijaya Strategic, our leadership team combines international expertise with deep-rooted local knowledge. We believe in hands-on consultancy, where our partners are directly involved in your success.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <i data-lucide="check-circle" class="text-primary w-6 h-6"></i>
+              </div>
+              <div>
+                <h5 class="font-heading font-bold text-lg text-textDark">Proven Methodologies</h5>
+                <p class="text-textMuted">We utilize globally recognized frameworks adapted for the unique Indonesian business landscape.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <i data-lucide="users" class="text-primary w-6 h-6"></i>
+              </div>
+              <div>
+                <h5 class="font-heading font-bold text-lg text-textDark">Network of Experts</h5>
+                <p class="text-textMuted">Access to an exclusive network of regulators, industry leaders, and technical specialists.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <a href="#team" class="text-primary font-semibold hover:text-secondary inline-flex items-center gap-2">
+              Meet the full team <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 bg-bgLight">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-primary rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+        <!-- Contact Info -->
+        <div class="md:w-5/12 p-10 md:p-14 text-white flex flex-col justify-between" style="background-color: #172e6e;">
+          <div>
+            <h3 class="font-heading text-3xl font-bold mb-6">Get in Touch</h3>
+            <p class="text-blue-100 mb-10 leading-relaxed">
+              Ready to elevate your business? Contact our team in SCBD for a confidential consultation.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <i data-lucide="map-pin" class="w-6 h-6 text-cta mt-1"></i>
+                <div>
+                  <h5 class="font-semibold text-lg">Headquarters</h5>
+                  <p class="text-blue-100 text-sm">Equity Tower, Level 35<br>SCBD Lot 9, Jl. Jend. Sudirman Kav 52-53<br>Jakarta 12190, Indonesia</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <i data-lucide="phone" class="w-6 h-6 text-cta"></i>
+                <div>
+                  <h5 class="font-semibold text-lg">Phone</h5>
+                  <p class="text-blue-100 text-sm">+62 21 555 0199</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <i data-lucide="mail" class="w-6 h-6 text-cta"></i>
+                <div>
+                  <h5 class="font-semibold text-lg">Email</h5>
+                  <p class="text-blue-100 text-sm">consult@wijayastrategic.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 md:mt-0 flex gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cta transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-cta transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="md:w-7/12 p-10 md:p-14 bg-white">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-textDark mb-2">First Name</label>
+                <input type="text" class="w-full px-4 py-3 rounded border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Budi">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-textDark mb-2">Last Name</label>
+                <input type="text" class="w-full px-4 py-3 rounded border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Santoso">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-textDark mb-2">Email Address</label>
+              <input type="email" class="w-full px-4 py-3 rounded border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="budi@company.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-textDark mb-2">Service Interest</label>
+              <select class="w-full px-4 py-3 rounded border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-white">
+                <option>Corporate Strategy</option>
+                <option>Financial Advisory</option>
+                <option>Legal Compliance</option>
+                <option>Other Inquiry</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-textDark mb-2">Message</label>
+              <textarea rows="4" class="w-full px-4 py-3 rounded border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="w-full px-8 py-4 bg-primary hover:bg-secondary text-white font-heading font-semibold rounded shadow-md hover:shadow-lg transition-all">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <span class="text-white font-heading font-bold text-xl">WIJAYA</span>
+          <span class="text-gray-500 ml-2">Strategic Consulting</span>
+          <p class="text-sm mt-2">&copy; 2024 Wijaya Strategic Consulting. All rights reserved.</p>
+        </div>
+        <div class="flex gap-8 text-sm">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Careers</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
+</PortfolioLayout>

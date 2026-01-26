@@ -1,0 +1,44 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  theme?: string;
+  themeClass?: string;
+  fonts?: {
+    sans?: string;
+    display?: string;
+  };
+  customStyles?: string;
+}
+
+const {
+  title,
+  description = 'Portfolio project by Midas Agency',
+  theme = '',
+  themeClass = '',
+  fonts = { sans: 'Manrope', display: 'Syne' },
+  customStyles = '',
+} = Astro.props;
+
+const googleFontsUrl = new URL('https://fonts.googleapis.com/css2');
+const fontFamilies = [];
+if (fonts.sans && fonts.display) {
+  fontFamilies.push(`family=${fonts.sans.replace(' ', '+')}:wght@300;400;500;600;700`);
+  fontFamilies.push(`family=${fonts.display.replace(' ', '+')}:wght@300;400;500;600;700;800`);
+}
+googleFontsUrl.search = fontFamilies.join('&');
+---
+
+<Layout title={title} description={description} class={themeClass}>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href={googleFontsUrl.href} rel="stylesheet" />
+
+  {theme && <style is:global define:vars={{ '--theme': theme }}></style>}
+
+  {customStyles && <style set:html={customStyles} />}
+
+  <slot />
+</Layout>
