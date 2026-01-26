@@ -1,2 +1,7 @@
 [phases.setup]
 nixPkgs = ["nodejs_20", "npm-9_x"]
+
+[static]
+publish = "/dist"
+# Use nginx to serve static files
+server = "nginx:alpine"
