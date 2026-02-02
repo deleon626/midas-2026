@@ -1,0 +1,231 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+---
+
+<PortfolioLayout
+  title="Summit Gear | Premium Mountaineering Equipment"
+  description="Luxury outdoor e-commerce platform specializing in premium mountaineering and adventure gear for serious climbers and outdoor enthusiasts."
+  themeClass="bg-zinc-950 text-zinc-50 font-sans selection:bg-yellow-400 selection:text-black"
+  fonts={{ sans: 'Space Grotesk', display: 'Archivo' }}
+>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+      <a href="/" class="font-display font-bold text-2xl tracking-tighter hover:opacity-80 transition-opacity">
+        SUMMIT GEAR
+      </a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide text-zinc-400">
+        <a href="#work" class="hover:text-white transition-colors duration-300">SHOWCASE</a>
+        <a href="#about" class="hover:text-white transition-colors duration-300">ABOUT</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-300">CONTACT</a>
+      </div>
+      <a href="/" class="md:hidden text-sm font-medium hover:text-zinc-400 transition-colors">BACK</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="/assets/summit-gear-hero.png" alt="Summit Gear Mountain Equipment" class="w-full h-full object-cover opacity-70">
+      <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+      <p class="text-yellow-400 text-sm md:text-base tracking-[0.2em] uppercase mb-6 animate-fade-in-up font-medium" style="animation-delay: 0.1s;">
+        E-Commerce • Outdoor
+      </p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight mb-8 animate-fade-in-up" style="animation-delay: 0.3s;">
+        Conquer Mountains with <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Premium Gear</span>
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-12 font-light animate-fade-in-up" style="animation-delay: 0.5s;">
+        Luxury mountaineering equipment curated for climbers and adventurers. Trusted by professionals, built for excellence, designed for the summit.
+      </p>
+      <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
+        <a href="#work" class="inline-block px-8 py-4 border border-yellow-400 hover:bg-yellow-400 hover:text-black hover:border-yellow-400 transition-all duration-300 text-sm tracking-widest uppercase rounded-full font-medium">
+          Explore Collection
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-zinc-500">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </div>
+  </header>
+
+  <!-- Product Highlights -->
+  <section id="work" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex justify-between items-end mb-16">
+      <div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-2">Featured Collection</h2>
+        <div class="h-1 w-20 bg-yellow-400"></div>
+      </div>
+      <span class="hidden md:block text-zinc-500 text-sm uppercase tracking-widest">Premium Products</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Product 1 -->
+      <div class="group relative overflow-hidden rounded-sm aspect-[3/4] cursor-pointer">
+        <div class="w-full h-full bg-zinc-800 flex items-center justify-center">
+          <svg class="w-16 h-16 text-yellow-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-yellow-400 mb-1">Climbing</p>
+            <h3 class="font-display text-xl text-white">Premium Jackets</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="group relative overflow-hidden rounded-sm aspect-[3/4] md:translate-y-12 cursor-pointer">
+        <div class="w-full h-full bg-zinc-800 flex items-center justify-center">
+          <svg class="w-16 h-16 text-yellow-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-yellow-400 mb-1">Footwear</p>
+            <h3 class="font-display text-xl text-white">Technical Boots</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="group relative overflow-hidden rounded-sm aspect-[3/4] cursor-pointer">
+        <div class="w-full h-full bg-zinc-800 flex items-center justify-center">
+          <svg class="w-16 h-16 text-yellow-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16l-4-4M6 8l12 12M12.5 20H7a2 2 0 01-2-2V9a2 2 0 012-2h10a2 2 0 012 2v4.5"></path></svg>
+        </div>
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-yellow-400 mb-1">Gear</p>
+            <h3 class="font-display text-xl text-white">Adventure Packs</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 text-center">
+      <a href="#" class="text-yellow-400 hover:text-yellow-300 transition-colors duration-300 text-sm tracking-widest uppercase border-b border-yellow-400 pb-1 hover:border-yellow-300">Explore Full Catalog</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-zinc-900 border-y border-zinc-800/50">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="relative pl-8 border-l border-yellow-400/30">
+            <h2 class="font-display text-3xl md:text-5xl font-bold mb-8 leading-tight">
+              Built for the <span class="text-yellow-400">Summit</span>
+            </h2>
+            <p class="text-zinc-400 text-lg leading-relaxed mb-6">
+              Summit Gear represents the pinnacle of outdoor equipment craftsmanship. Our curated collection features premium mountaineering and climbing gear trusted by professional adventurers worldwide.
+            </p>
+            <p class="text-zinc-400 text-lg leading-relaxed">
+              Every product is selected for durability, performance, and innovation. We partner with the world's leading gear manufacturers to bring you equipment that won't fail when you need it most.
+            </p>
+          </div>
+        </div>
+        <div class="relative h-96 w-full overflow-hidden rounded-sm">
+          <img src="/assets/summit-gear-hero.png" alt="Summit Gear Collection" class="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-1000">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <h2 class="font-display text-3xl md:text-4xl font-bold mb-12 text-center">Why Summit Gear</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="space-y-4">
+        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold">Premium Quality</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Every item meets rigorous quality standards. We verify durability and performance with professional climbers and adventurers.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold">Expert Support</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Our team includes experienced mountaineers ready to help you choose the perfect gear for your adventure.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold">Best Value</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Premium pricing that reflects true quality. We never compromise on materials or craftsmanship.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        </div>
+        <h3 class="font-display text-xl font-bold">Proven Track Record</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Trusted by summit explorers and professional mountaineers across the world's most challenging peaks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="pt-24 pb-12 px-6 border-t border-zinc-800 bg-zinc-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div>
+          <h3 class="font-display font-bold text-2xl mb-6">Summit Gear</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Premium Mountaineering<br>
+            Equipment & Gear
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-xs">Project</h4>
+          <ul class="space-y-4 text-zinc-400 text-sm">
+            <li><a href="/" class="hover:text-yellow-400 transition-colors">Back to Portfolio</a></li>
+            <li><a href="/" class="hover:text-yellow-400 transition-colors">Midas Agency</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-xs">Category</h4>
+          <ul class="space-y-4 text-zinc-400 text-sm">
+            <li>E-Commerce</li>
+            <li>Outdoor Gear</li>
+            <li>Premium Products</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-medium mb-6 uppercase tracking-wider text-xs">Status</h4>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Live &<br/>
+            In Production
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-600">
+        <p>&copy; 2024 Midas Agency. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="/" class="hover:text-zinc-400">Back Home</a>
+          <a href="#" class="hover:text-zinc-400">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</PortfolioLayout>
