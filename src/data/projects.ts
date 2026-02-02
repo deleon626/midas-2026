@@ -48,6 +48,22 @@ export const projects: PortfolioProject[] = [
     color: 'purple',
     link: '/portfolio/wijaya-consulting',
   },
+  {
+    slug: 'seedco-landing',
+    title: 'SEEDCO',
+    category: 'AGRICULTURE / WEB',
+    heroImage: '/assets/seedco-hero.png',
+    color: 'orange',
+    link: '/portfolio/seedco-landing',
+  },
+  {
+    slug: 'summit-gear-landing',
+    title: 'SUMMIT GEAR',
+    category: 'E-COMMERCE / OUTDOOR',
+    heroImage: '/assets/summit-gear-hero.png',
+    color: 'gold',
+    link: '/portfolio/summit-gear-landing',
+  },
 ];
 
 export const services = [
