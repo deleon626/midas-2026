@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-Native UI - UI Style Catalogue</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366F1',
+            secondary: '#A855F7',
+            background: '#0F172A',
+            surface: '#1E293B',
+            muted: '#94A3B8',
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-white min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 z-50">
+    <a href="/top-13/index.html" class="flex items-center gap-2 px-4 py-2 bg-surface/50 backdrop-blur-sm rounded-lg hover:bg-surface/70 transition-colors cursor-pointer">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      <span class="text-sm font-medium">Back to Catalogue</span>
+    </a>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+      <p class="text-primary tracking-[0.2em] mb-4 text-sm md:text-base uppercase font-semibold">
+        AI / Chatbot
+      </p>
+      <h1 class="font-heading font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-8">
+        AISpark
+      </h1>
+      <p class="font-body text-slate-300 text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed">
+        Conversations that matter. AI-native interface for intelligent chatbots.
+      </p>
+
+      <!-- Chat Interface Element -->
+      <div class="max-w-2xl mx-auto bg-surface/50 backdrop-blur-lg border border-white/10 rounded-2xl p-6 mb-8">
+        <div class="flex items-center gap-2 mb-4 text-slate-400 text-sm">
+          <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span>AI is typing...</span>
+        </div>
+        <div class="bg-white/10 rounded-xl p-4 mb-4">
+          <p class="text-slate-300">Hello! How can I help you today?</p>
+        </div>
+        <div class="flex gap-2">
+          <input type="text" placeholder="Type your message..." class="flex-1 bg-transparent border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary transition-colors">
+          <button class="bg-primary text-white px-6 py-3 rounded-xl font-semibold cursor-pointer hover:bg-primary/90 transition-colors">
+            Send
+          </button>
+        </div>
+      </div>
+
+      <a href="#" class="inline-block px-8 py-4 bg-primary hover:bg-primary/90 text-white font-heading font-bold text-lg rounded-lg shadow-lg hover:scale-105 transition-all cursor-pointer">
+        Get Started
+      </a>
+    </div>
+  </header>
+
+  <!-- Design System Card -->
+  <section class="py-24 bg-surface">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-12 text-center">Design System</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <!-- Color Palette -->
+        <div class="bg-surface/50 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+          <h3 class="font-heading font-bold text-xl mb-4">Color Palette</h3>
+          <div class="flex gap-3">
+            <div class="flex-1">
+              <div class="h-16 rounded-lg bg-primary border border-white/10"></div>
+              <p class="text-xs mt-2 font-medium text-slate-300">Primary</p>
+            </div>
+            <div class="flex-1">
+              <div class="h-16 rounded-lg bg-secondary border border-white/10"></div>
+              <p class="text-xs mt-2 font-medium text-slate-300">Secondary</p>
+            </div>
+            <div class="flex-1">
+              <div class="h-16 rounded-lg bg-white border border-white/10"></div>
+              <p class="text-xs mt-2 font-medium text-slate-300">Accent</p>
+            </div>
+            <div class="flex-1">
+              <div class="h-16 rounded-lg bg-muted border border-white/10"></div>
+              <p class="text-xs mt-2 font-medium text-slate-300">Muted</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="bg-surface/50 backdrop-blur-sm border border-white/10 p-6 rounded-xl">
+          <h3 class="font-heading font-bold text-xl mb-4">Typography</h3>
+          <p class="text-2xl font-heading font-bold text-white mb-2">Heading Font</p>
+          <p class="text-lg font-heading">Plus Jakarta Sans</p>
+          <hr class="my-4 border-white/10">
+          <p class="text-lg font-body text-slate-300 mb-2">Body Font</p>
+          <p class="font-body">Plus Jakarta Sans</p>
+        </div>
+      </div>
+
+      <!-- Style Info Card -->
+      <div class="bg-surface/50 backdrop-blur-sm border border-white/10 p-8 rounded-xl">
+        <div class="flex items-start gap-6">
+          <div class="text-6xl font-heading font-black text-white/20">#12</div>
+          <div class="flex-1">
+            <h3 class="font-heading font-bold text-3xl text-white mb-2">AI-Native UI</h3>
+            <p class="text-primary font-semibold mb-4">★★★☆☆ • AI products, Chatbots (growing)</p>
+            <p class="font-body text-slate-300 leading-relaxed">
+              Fastest growing trend. ChatGPT changed UI expectations. Chat interface patterns, typing indicators, prompt/input focus, conversational UI, and modern dark/light toggle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-background border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="font-body text-slate-400 text-sm">
+        Part of UI Style Catalogue • Top 13 Most Used UI Styles
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

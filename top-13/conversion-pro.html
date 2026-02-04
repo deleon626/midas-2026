@@ -1,0 +1,962 @@
+---
+// Conversion-Optimized Landing Page
+// Design System: Social Proof-Focused with High-Converting Elements
+// Colors: Sky Blue Trust (#0EA5E9) + Warm CTA (#F97316)
+// Typography: Rubik (Headings) + Nunito Sans (Body)
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertPro | Double Your Conversion Rate in 30 Days</title>
+    <meta name="description" content="The all-in-one conversion optimization platform trusted by 10,000+ marketers. A/B testing, analytics, and personalization in one powerful suite.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif'],
+                        display: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: '#0EA5E9',    // Sky Blue Trust
+                            secondary: '#38BDF8',  // Light Sky
+                            cta: '#F97316',        // Warm Orange CTA
+                            'cta-hover': '#EA580C',
+                            dark: '#0C4A6E',       // Dark text
+                            light: '#F0F9FF',      // Light background
+                            success: '#10B981',    // Success green
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'count-up': 'countUp 2s ease-out forwards',
+                        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
+                        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0F9FF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0EA5E9;
+            border-radius: 4px;
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #0EA5E9 0%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Button shine effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        .btn-shine:hover::before {
+            left: 100%;
+        }
+        
+        /* Star rating */
+        .star-filled {
+            color: #FBBF24;
+        }
+        
+        /* Intersection Observer animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Counter animation */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Trust badge pulse */
+        .trust-pulse {
+            animation: trustPulse 2s ease-in-out infinite;
+        }
+        @keyframes trustPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+        }
+        
+        /* Sticky CTA */
+        .sticky-cta {
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-brand-light antialiased">
+    
+    <!-- Announcement Bar -->
+    <div class="bg-brand-dark text-white py-2 px-4 text-center text-sm">
+        <span class="font-semibold">Limited Time:</span> Get 50% off your first 3 months + Free onboarding. 
+        <a href="#pricing" class="underline hover:text-brand-secondary ml-1">Claim Offer &rarr;</a>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-8 left-0 right-0 z-50 px-4">
+        <div class="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex justify-between items-center shadow-lg">
+            <a href="#" class="font-display font-bold text-2xl text-brand-dark">
+                Convert<span class="text-brand-primary">Pro</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#features" class="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors">Features</a>
+                <a href="#testimonials" class="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors">Testimonials</a>
+                <a href="#pricing" class="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors">Pricing</a>
+                <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-brand-primary transition-colors">FAQ</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="#" class="hidden md:block text-sm font-medium text-gray-600 hover:text-brand-dark transition-colors">Sign In</a>
+                <a href="#pricing" class="btn-shine bg-brand-cta hover:bg-brand-cta-hover text-white px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg shadow-brand-cta/30">
+                    Start Free Trial
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 -z-10">
+            <div class="absolute top-20 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cta/10 rounded-full blur-[80px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left: Content -->
+                <div class="text-center lg:text-left animate-fade-up">
+                    <!-- Trust Badge -->
+                    <div class="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-md mb-6 trust-pulse">
+                        <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-sm font-semibold text-gray-700">Trusted by 10,000+ marketers</span>
+                    </div>
+                    
+                    <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
+                        Double Your <span class="gradient-text">Conversion Rate</span> in 30 Days
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+                        The all-in-one platform for A/B testing, analytics, and personalization. 
+                        Join companies that see <span class="font-bold text-brand-dark">2.3x higher ROI</span> on average.
+                    </p>
+                    
+                    <!-- CTA Group -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                        <a href="#pricing" class="btn-shine bg-brand-cta hover:bg-brand-cta-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl shadow-brand-cta/30 flex items-center justify-center gap-2">
+                            Start Free 14-Day Trial
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="#demo" class="bg-white hover:bg-gray-50 text-brand-dark border-2 border-gray-200 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Watch Demo
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof Mini -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                        <div class="flex -space-x-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                            <div class="w-10 h-10 rounded-full border-2 border-white bg-brand-primary flex items-center justify-center text-white text-xs font-bold">+9k</div>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <div class="flex">
+                                <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <span class="text-sm font-semibold text-gray-700">4.9/5</span>
+                        </div>
+                        <span class="text-sm text-gray-500">from 2,847 reviews</span>
+                    </div>
+                </div>
+                
+                <!-- Right: Dashboard Image -->
+                <div class="relative animate-fade-up" style="animation-delay: 0.2s;">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-brand-primary/20">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop" alt="ConvertPro Dashboard" class="w-full h-auto">
+                        
+                        <!-- Floating Stats Card -->
+                        <div class="absolute -left-4 sm:-left-8 top-1/4 bg-white rounded-xl shadow-xl p-4 animate-float">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Conversion Rate</p>
+                                    <p class="text-lg font-bold text-green-600">+127%</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Users Card -->
+                        <div class="absolute -right-4 sm:-right-8 bottom-1/4 bg-white rounded-xl shadow-xl p-4 animate-float" style="animation-delay: 1s;">
+                            <div class="flex items-center gap-3">
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-brand-primary"></div>
+                                    <div class="w-8 h-8 rounded-full bg-brand-cta"></div>
+                                    <div class="w-8 h-8 rounded-full bg-purple-500"></div>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Active Users</p>
+                                    <p class="text-lg font-bold text-brand-dark">12,847</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Logo Cloud -->
+    <section class="py-12 border-y border-gray-200 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-medium text-gray-500 mb-8 uppercase tracking-wider">Trusted by industry leaders</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center opacity-60">
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Stripe</text>
+                    </svg>
+                </div>
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Notion</text>
+                    </svg>
+                </div>
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Slack</text>
+                    </svg>
+                </div>
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Figma</text>
+                    </svg>
+                </div>
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Shopify</text>
+                    </svg>
+                </div>
+                <div class="flex justify-center">
+                    <svg class="h-8 w-auto" viewBox="0 0 120 30" fill="currentColor">
+                        <text x="10" y="22" font-family="Rubik" font-weight="700" font-size="18" fill="#374151">Webflow</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem/Solution Section -->
+    <section id="features" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <span class="text-brand-primary font-semibold text-sm uppercase tracking-wider">The Problem</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mt-4 mb-6">
+                    You're Leaving Money on the Table
+                </h2>
+                <p class="text-lg text-gray-600">
+                    98% of visitors leave without converting. Traditional analytics tell you what happened, 
+                    but not why. Or how to fix it.
+                </p>
+            </div>
+            
+            <!-- Stats Row -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg animate-on-scroll">
+                    <div class="text-4xl sm:text-5xl font-display font-bold text-brand-cta mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <p class="text-gray-600">Of visitors leave without converting</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="text-4xl sm:text-5xl font-display font-bold text-brand-primary mb-2">
+                        $<span class="counter" data-target="42000">0</span>+
+                    </div>
+                    <p class="text-gray-600">Average annual loss per business</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-2xl shadow-lg animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="text-4xl sm:text-5xl font-display font-bold text-brand-success mb-2">
+                        <span class="counter" data-target="73">0</span>%
+                    </div>
+                    <p class="text-gray-600">Don't understand why users drop off</p>
+                </div>
+            </div>
+            
+            <!-- Solution -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <span class="text-brand-success font-semibold text-sm uppercase tracking-wider">The Solution</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mt-4 mb-6">
+                    Everything You Need to Convert More
+                </h2>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll">
+                    <div class="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Advanced A/B Testing</h3>
+                    <p class="text-gray-600">Test headlines, images, and CTAs with statistical confidence. No coding required.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-brand-cta/10 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Session Recordings</h3>
+                    <p class="text-gray-600">Watch exactly how users interact with your site. Spot friction points instantly.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">AI Personalization</h3>
+                    <p class="text-gray-600">Automatically show the right message to the right visitor at the right time.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Funnel Analysis</h3>
+                    <p class="text-gray-600">Identify exactly where users drop off in your conversion funnel and fix it.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Feedback Widgets</h3>
+                    <p class="text-gray-600">Collect visitor feedback at key moments. Understand intent and objections.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-3">Real-time Alerts</h3>
+                    <p class="text-gray-600">Get notified when conversion rates drop or anomalies occur. Act fast.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <span class="text-brand-primary font-semibold text-sm uppercase tracking-wider">Success Stories</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mt-4 mb-6">
+                    Trusted by 10,000+ Marketers Worldwide
+                </h2>
+                <p class="text-lg text-gray-600">
+                    See how industry leaders are doubling their conversion rates with ConvertPro.
+                </p>
+            </div>
+            
+            <!-- Testimonial Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-brand-light rounded-2xl p-8 animate-on-scroll">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "We increased our conversion rate by 156% in just 3 weeks. The A/B testing feature alone paid for the entire year's subscription."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-brand-dark">Sarah Chen</p>
+                            <p class="text-sm text-gray-500">CMO at TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-brand-light rounded-2xl p-8 animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "The session recordings revealed UX issues we never knew existed. Fixed them and saw a 43% increase in sign-ups within a month."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Marcus Johnson" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-brand-dark">Marcus Johnson</p>
+                            <p class="text-sm text-gray-500">Founder at GrowthLab</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-brand-light rounded-2xl p-8 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="flex items-center gap-1 mb-4">
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 star-filled" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">
+                        "Best investment we made this year. ROI was visible within the first month. The AI personalization is like having a conversion expert on staff 24/7."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emily Rodriguez" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold text-brand-dark">Emily Rodriguez</p>
+                            <p class="text-sm text-gray-500">VP Marketing at ScaleUp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More Reviews Link -->
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center gap-2 text-brand-primary font-semibold hover:underline">
+                    Read all 2,847 reviews
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 lg:py-32 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <span class="text-brand-primary font-semibold text-sm uppercase tracking-wider">Pricing</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mt-4 mb-6">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Start free for 14 days. No credit card required. Cancel anytime.
+                </p>
+            </div>
+            
+            <!-- Pricing Toggle -->
+            <div class="flex justify-center items-center gap-4 mb-12">
+                <span class="text-sm font-medium text-gray-600">Monthly</span>
+                <button class="relative w-14 h-8 bg-brand-primary rounded-full transition-colors" id="pricingToggle">
+                    <span class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition-transform translate-x-6" id="toggleDot"></span>
+                </button>
+                <span class="text-sm font-medium text-gray-600">Annual</span>
+                <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">Save 20%</span>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Starter -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg animate-on-scroll">
+                    <h3 class="font-display font-bold text-xl mb-2">Starter</h3>
+                    <p class="text-gray-500 text-sm mb-6">Perfect for small businesses</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-display font-bold">$49</span>
+                        <span class="text-gray-500">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Up to 10,000 visitors/mo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">5 A/B tests</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Basic analytics</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Email support</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-full hover:bg-brand-primary hover:text-white transition-all duration-300">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Professional (Popular) -->
+                <div class="bg-brand-dark rounded-2xl p-8 shadow-xl relative animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-cta text-white text-sm font-bold px-4 py-1 rounded-full">
+                        Most Popular
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2 text-white">Professional</h3>
+                    <p class="text-gray-400 text-sm mb-6">For growing companies</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-display font-bold text-white">$149</span>
+                        <span class="text-gray-400">/month</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-300">Up to 100,000 visitors/mo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-300">Unlimited A/B tests</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-300">Session recordings</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-300">AI personalization</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-300">Priority support</span>
+                        </li>
+                    </ul>
+                    <button class="btn-shine w-full py-3 bg-brand-cta hover:bg-brand-cta-hover text-white font-semibold rounded-full transition-all duration-300 shadow-lg">
+                        Start Free Trial
+                    </button>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg animate-on-scroll" style="transition-delay: 0.2s;">
+                    <h3 class="font-display font-bold text-xl mb-2">Enterprise</h3>
+                    <p class="text-gray-500 text-sm mb-6">For large organizations</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-display font-bold">Custom</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Unlimited visitors</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Custom integrations</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Dedicated account manager</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">SLA & 24/7 support</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-600">Custom training</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 border-2 border-brand-primary text-brand-primary font-semibold rounded-full hover:bg-brand-primary hover:text-white transition-all duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap justify-center items-center gap-8 mt-12 text-sm text-gray-500">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                    <span>SSL Secure</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>No Credit Card Required</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-brand-success" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Cancel Anytime</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="text-brand-primary font-semibold text-sm uppercase tracking-wider">FAQ</span>
+                <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl mt-4 mb-6">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden animate-on-scroll">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-brand-dark">How does the 14-day free trial work?</span>
+                        <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Start your free trial with full access to all Professional features. No credit card required. At the end of 14 days, choose a plan that works for you or continue with our free tier.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-brand-dark">Can I switch plans at any time?</span>
+                        <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any difference in cost.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.2s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-brand-dark">What happens to my data if I cancel?</span>
+                        <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Your data remains accessible for 30 days after cancellation, giving you time to export anything you need. After that, it's permanently deleted from our servers.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden animate-on-scroll">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-brand-dark">Do you offer discounts for nonprofits?</span>
+                        <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Yes! We offer a 50% discount for registered nonprofits and educational institutions. Contact our sales team with your organization details to apply.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden animate-on-scroll" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-brand-dark">How accurate are the A/B test results?</span>
+                        <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">Our A/B testing uses Bayesian statistics with 95% confidence intervals. We require a minimum sample size and run tests until statistical significance is reached, ensuring reliable results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA Section -->
+    <section class="py-20 lg:py-32 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-cta/20 rounded-full blur-[100px]"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-on-scroll">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
+                Ready to Double Your Conversions?
+            </h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join 10,000+ marketers who are already converting more visitors into customers.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="btn-shine bg-brand-cta hover:bg-brand-cta-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-xl shadow-brand-cta/30">
+                    Start Free 14-Day Trial
+                </a>
+                <a href="#" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 backdrop-blur-sm">
+                    Schedule Demo
+                </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-6">No credit card required. Cancel anytime.</p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="font-display font-bold text-2xl text-white mb-4 block">
+                        Convert<span class="text-brand-primary">Pro</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">
+                        The all-in-one conversion optimization platform for modern marketers.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white text-sm transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white text-sm transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Integrations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 ConvertPro. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Sticky CTA (appears on scroll) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-50 sticky-cta" id="stickyCTA">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="hidden sm:block">
+                <p class="font-semibold text-brand-dark">Ready to convert more visitors?</p>
+                <p class="text-sm text-gray-500">Start your free 14-day trial today.</p>
+            </div>
+            <a href="#pricing" class="btn-shine bg-brand-cta hover:bg-brand-cta-hover text-white px-6 py-3 rounded-full font-bold transition-all duration-300 shadow-lg">
+                Start Free Trial
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation if it's a counter
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        animateCounter(counter, target);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        
+        // Counter animation function
+        function animateCounter(element, target) {
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Sticky CTA visibility
+        const stickyCTA = document.getElementById('stickyCTA');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 500 && currentScrollY > lastScrollY) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+        
+        // Pricing toggle
+        const pricingToggle = document.getElementById('pricingToggle');
+        const toggleDot = document.getElementById('toggleDot');
+        let isAnnual = true;
+        
+        pricingToggle.addEventListener('click', () => {
+            isAnnual = !isAnnual;
+            toggleDot.style.transform = isAnnual ? 'translateX(24px)' : 'translateX(0)';
+            // In a real app, this would update the pricing display
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

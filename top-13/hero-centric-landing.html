@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaunchPad - Marketing Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0EA5E9',
+            secondary: '#38BDF8',
+            cta: '#F97316',
+            background: '#F0F9FF',
+            surface: '#FFFFFF',
+            text: '#0C4A6E',
+            muted: '#64748B',
+          },
+          fontFamily: {
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(135deg, #0EA5E9 0%, #8B5CF6 50%, #F97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 50%, rgba(249, 115, 22, 0.05) 100%);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-background text-text font-body antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 right-4 z-50">
+    <div class="max-w-7xl mx-auto glass-card rounded-2xl px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <span class="font-heading font-bold text-xl text-text">LaunchPad</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-muted hover:text-text transition-colors duration-200 cursor-pointer">Features</a>
+          <a href="#testimonials" class="text-muted hover:text-text transition-colors duration-200 cursor-pointer">Testimonials</a>
+          <a href="#pricing" class="text-muted hover:text-text transition-colors duration-200 cursor-pointer">Pricing</a>
+        </div>
+        <a href="#cta" class="hidden md:inline-flex px-6 py-3 bg-text text-white font-heading font-semibold rounded-xl cursor-pointer hover:bg-text/90 transition-all duration-200 hover:shadow-lg">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 hero-gradient"></div>
+      <div class="absolute top-0 left-0 w-full h-full">
+        <!-- Floating gradient orbs -->
+        <div class="absolute top-20 left-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cta/10 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+      </div>
+      <!-- Grid pattern -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, #0C4A6E 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/80 rounded-full mb-8 border border-primary/20 animate-fade-in-up">
+            <span class="w-2 h-2 bg-cta rounded-full animate-pulse"></span>
+            <span class="text-sm font-medium text-text">Now with AI-powered analytics</span>
+          </div>
+          
+          <h1 class="font-heading font-bold text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-8 text-text animate-fade-in-up" style="animation-delay: 0.1s;">
+            Launch<br/>
+            <span class="gradient-text">Bigger.</span><br/>
+            Faster.
+          </h1>
+          
+          <p class="text-muted text-lg md:text-xl lg:text-2xl max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+            The all-in-one marketing platform that turns clicks into customers. Build, launch, and scale your campaigns in minutes.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-fade-in-up" style="animation-delay: 0.3s;">
+            <a href="#cta" class="inline-flex items-center justify-center px-8 py-4 bg-cta text-white font-heading font-bold text-lg rounded-xl cursor-pointer hover:bg-cta/90 hover:scale-105 transition-all duration-200 shadow-xl shadow-cta/25 focus:ring-4 focus:ring-cta/30 focus:outline-none">
+              Start Free Trial
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
+            <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-white text-text font-heading font-semibold text-lg rounded-xl cursor-pointer hover:bg-slate-50 border border-slate-200 transition-all duration-200">
+              <svg class="w-5 h-5 mr-2 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+              </svg>
+              Watch Demo
+            </a>
+          </div>
+          
+          <!-- Social Proof Mini -->
+          <div class="flex items-center gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.4s;">
+            <div class="flex -space-x-3">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="User" class="w-10 h-10 rounded-full border-2 border-white object-cover">
+            </div>
+            <div class="text-left">
+              <div class="flex items-center gap-1">
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                <span class="font-bold text-text">4.9</span>
+              </div>
+              <p class="text-sm text-muted">from 2,000+ reviews</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Content - Hero Image -->
+        <div class="relative animate-fade-in-up hidden lg:block" style="animation-delay: 0.3s;">
+          <div class="relative">
+            <!-- Main dashboard mockup -->
+            <div class="relative bg-white rounded-2xl shadow-2xl shadow-primary/20 p-4 border border-slate-100 animate-float">
+              <img src="https://cdn.prod.website-files.com/5e8e816d43060db856099187/647e57ac5d1c5f916a48ba71_1-dark-mode-dashboard-webflow-template-1.5x.png" alt="LaunchPad Dashboard" class="rounded-xl w-full">
+              <!-- Floating stats card -->
+              <div class="absolute -left-8 top-1/4 glass-card rounded-xl p-4 shadow-xl animate-float" style="animation-delay: 1s;">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted">Conversion</p>
+                    <p class="font-bold text-text">+147%</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Floating users card -->
+              <div class="absolute -right-4 bottom-1/4 glass-card rounded-xl p-4 shadow-xl animate-float" style="animation-delay: 2s;">
+                <div class="flex items-center gap-3">
+                  <div class="flex -space-x-2">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">JD</div>
+                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">MK</div>
+                    <div class="w-8 h-8 bg-cta rounded-full flex items-center justify-center text-white text-xs font-bold">+5</div>
+                  </div>
+                  <div>
+                    <p class="text-xs text-muted">Active now</p>
+                    <p class="font-bold text-text">1,234</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Logo Cloud -->
+  <section class="py-16 border-y border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-muted text-sm font-medium mb-8 uppercase tracking-wider">Trusted by leading companies</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50">
+        <div class="flex items-center gap-2 text-2xl font-heading font-bold text-slate-400">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Stripe
+        </div>
+        <div class="flex items-center gap-2 text-2xl font-heading font-bold text-slate-400">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Notion
+        </div>
+        <div class="flex items-center gap-2 text-2xl font-heading font-bold text-slate-400">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Figma
+        </div>
+        <div class="flex items-center gap-2 text-2xl font-heading font-bold text-slate-400">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </div>
+        <div class="flex items-center gap-2 text-2xl font-heading font-bold text-slate-400">
+          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zm-1.5-12.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM19 19h-3v-5.5c0-1.5-.5-2.5-1.8-2.5-1 0-1.6.7-1.8 1.3-.1.2-.1.5-.1.8V19h-3V8h2.8v1.5c.4-.7 1.3-1.5 2.7-1.5 2 0 3.3 1.3 3.3 4V19z"/></svg>
+          Linear
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-primary font-semibold mb-4 uppercase tracking-wider text-sm">Features</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-text mb-6">
+          Everything you need to launch
+        </h2>
+        <p class="text-muted text-lg">
+          Powerful tools designed to help you create, manage, and optimize your marketing campaigns with ease.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="group bg-surface p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-primary group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-text mb-3">Lightning Fast</h3>
+          <p class="text-muted leading-relaxed">
+            Deploy campaigns in minutes, not days. Our automated workflows handle the heavy lifting so you can focus on strategy.
+          </p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="group bg-surface p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500 group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-purple-500 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-text mb-3">AI Analytics</h3>
+          <p class="text-muted leading-relaxed">
+            Get real-time insights powered by machine learning. Predict trends and optimize performance automatically.
+          </p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="group bg-surface p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-cta/10 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 bg-cta/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-cta group-hover:scale-110 transition-all duration-300">
+            <svg class="w-7 h-7 text-cta group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-heading font-bold text-xl text-text mb-3">Team Collaboration</h3>
+          <p class="text-muted leading-relaxed">
+            Work together seamlessly with built-in commenting, approvals, and role-based access for your entire team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="text-primary font-semibold mb-4 uppercase tracking-wider text-sm">Testimonials</p>
+        <h2 class="font-heading font-bold text-4xl md:text-5xl text-text mb-6">
+          Loved by marketers worldwide
+        </h2>
+        <p class="text-muted text-lg">
+          See what our customers have to say about their experience with LaunchPad.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-surface p-8 rounded-2xl shadow-sm border border-slate-100">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-text mb-6 leading-relaxed">
+            "LaunchPad transformed our marketing operations. We reduced campaign setup time by 80% and saw a 3x increase in conversion rates. Absolutely game-changing!"
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-heading font-bold text-text">Sarah Chen</p>
+              <p class="text-sm text-muted">CMO at TechFlow</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-surface p-8 rounded-2xl shadow-sm border border-slate-100">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-text mb-6 leading-relaxed">
+            "The AI analytics feature is incredible. It predicted trends we never would have caught manually. Our ROI has increased by 250% since switching to LaunchPad."
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Marcus Johnson" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-heading font-bold text-text">Marcus Johnson</p>
+              <p class="text-sm text-muted">Director of Growth at ScaleUp</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-surface p-8 rounded-2xl shadow-sm border border-slate-100">
+          <div class="flex gap-1 mb-4">
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="text-text mb-6 leading-relaxed">
+            "Finally, a marketing platform that understands collaboration. Our team productivity has skyrocketed. The approval workflows alone saved us countless hours."
+          </p>
+          <div class="flex items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emily Rodriguez" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <p class="font-heading font-bold text-text">Emily Rodriguez</p>
+              <p class="text-sm text-muted">Head of Marketing at InnovateCo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-20 bg-text">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="font-heading font-bold text-4xl md:text-5xl text-white mb-2">10K+</p>
+          <p class="text-slate-400">Active Users</p>
+        </div>
+        <div>
+          <p class="font-heading font-bold text-4xl md:text-5xl text-white mb-2">500M+</p>
+          <p class="text-slate-400">Campaigns Launched</p>
+        </div>
+        <div>
+          <p class="font-heading font-bold text-4xl md:text-5xl text-white mb-2">99.9%</p>
+          <p class="text-slate-400">Uptime</p>
+        </div>
+        <div>
+          <p class="font-heading font-bold text-4xl md:text-5xl text-white mb-2">4.9/5</p>
+          <p class="text-slate-400">User Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-cta/5"></div>
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-text mb-6">
+        Ready to launch<br/>
+        <span class="gradient-text">your next campaign?</span>
+      </h2>
+      <p class="text-muted text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+        Join thousands of marketers who are already launching bigger and faster. Start your free trial today — no credit card required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="inline-flex items-center justify-center px-10 py-5 bg-cta text-white font-heading font-bold text-lg rounded-xl cursor-pointer hover:bg-cta/90 hover:scale-105 transition-all duration-200 shadow-xl shadow-cta/25">
+          Get Started Free
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+        <a href="#" class="inline-flex items-center justify-center px-10 py-5 bg-white text-text font-heading font-semibold text-lg rounded-xl cursor-pointer hover:bg-slate-50 border border-slate-200 transition-all duration-200">
+          Contact Sales
+        </a>
+      </div>
+      <p class="text-muted text-sm mt-6">Free 14-day trial • No credit card required</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-5 gap-12 mb-12">
+        <div class="md:col-span-2">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <span class="font-heading font-bold text-xl text-text">LaunchPad</span>
+          </a>
+          <p class="text-muted mb-6 max-w-sm">
+            The all-in-one marketing platform that helps teams launch bigger, faster campaigns with AI-powered insights.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-muted hover:text-primary hover:shadow-md transition-all cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-muted hover:text-primary hover:shadow-md transition-all cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-muted hover:text-primary hover:shadow-md transition-all cursor-pointer">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-heading font-bold text-text mb-4">Product</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Features</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Pricing</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Integrations</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Changelog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-heading font-bold text-text mb-4">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">About</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Blog</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Careers</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Press</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-heading font-bold text-text mb-4">Resources</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Documentation</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Help Center</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Community</a></li>
+            <li><a href="#" class="text-muted hover:text-primary transition-colors cursor-pointer">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-muted text-sm">
+          2026 LaunchPad. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a href="#" class="text-muted text-sm hover:text-primary transition-colors cursor-pointer">Privacy Policy</a>
+          <a href="#" class="text-muted text-sm hover:text-primary transition-colors cursor-pointer">Terms of Service</a>
+          <a href="#" class="text-muted text-sm hover:text-primary transition-colors cursor-pointer">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
